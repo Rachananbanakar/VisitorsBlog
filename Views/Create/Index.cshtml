@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null; // This line ensures that no layout is applied to this view
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Blog Post</title>
+    <link rel="stylesheet" href="~/css/site.css"> <!-- Using "~/" to refer to the root directory -->
+    <script>
+        function redirectToBlog() {
+            window.location.href = "@Url.Action("Index", "Blog")"; // Using Razor Url.Action to generate the URL
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Travel Blog</h1>
+                <ul class="nav-links">
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li> <!-- Using Razor Url.Action to generate the URL -->
+                    <li><a href="@Url.Action("Index", "Blog")">Blog</a></li> <!-- Using Razor Url.Action to generate the URL -->
+                    <li><a href="@Url.Action("Index", "Data")">Database</a></li> <!-- Using Razor Url.Action to generate the URL -->
+                    <li><a href="@Url.Action("About", "Home")">About</a></li> <!-- Using Razor Url.Action to generate the URL -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="create-post">
+        <h2>Create New Blog Post</h2>
+        <div class="container">
+            <form>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="image">Image URL:</label>
+                <input type="url" id="image" name="image" required>
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" rows="5" required></textarea>
+                <button type="submit" onclick="redirectToBlog()">Create Post</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

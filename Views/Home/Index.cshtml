@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null; // Set layout to null to exclude layout from this page
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog - Home</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Travel Blog</h1>
+                <ul class="nav-links">
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li><a href="@Url.Action("Index", "Blog")">Blog</a></li>
+                    <li><a href="@Url.Action("Index", "Data")">Data</a></li>
+                    <li><a href="@Url.Action("Index", "About")">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <a class="prev" onclick="changeBackground()">&larr;</a>
+        <div class="container">
+            <h2>Welcome to Our Travel Blog!</h2>
+            <p>Explore the world with us and discover new adventures.</p>
+        </div>
+        <a class="next" onclick="changeBackground()">&rarr;</a>
+    </section>
+
+    <script src="~/js/site.js"></script>
+</body>
+</html>
